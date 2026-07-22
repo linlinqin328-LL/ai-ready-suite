@@ -1,0 +1,33 @@
+{
+  "name": "ai-ready-suite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Ready Suite — Design system AI readiness assessment, audit, and library scout.",
+  "scripts": {
+    "postinstall": "cd mcp-servers/ai-ready-engine && npm install && npm run build:all",
+    "install:all": "cd mcp-servers/ai-ready-engine && npm install",
+    "build": "cd mcp-servers/ai-ready-engine && npm run build:all",
+    "test": "node test/run-assessment.js",
+    "test:integration": "node test/integration-test.js",
+    "test:interaction": "node test/run-interaction.js",
+    "test:jest": "npx jest --verbose",
+    "test:ci": "npx jest --verbose --ci --no-cache",
+    "start": "cd mcp-servers/ai-ready-engine && npm start",
+     "testAll": "node test/run-assessment.js && node test/integration-test.js && node test/run-interaction.js && npx jest --verbose",
+     "publish:verify": "node test/publish-verify.js",
+     "dev:watch": "node tools/dev-watch.js",
+     "build:publish": "npm run build && rm -rf publish && mkdir -p publish/.codex-plugin publish/.market-assets publish/skills publish/mcp-servers/ai-ready-engine/dist publish/mcp-servers/ai-ready-engine/schema publish/examples && cp .codex-plugin/plugin.json .codex-plugin/icon.svg publish/.codex-plugin/ 2>/dev/null; cp .mcp.json publish/ && cp -r skills/ai-ready-suite publish/skills/ && cp -r mcp-servers/ai-ready-engine/dist/* publish/mcp-servers/ai-ready-engine/dist/ && cp -r mcp-servers/ai-ready-engine/schema/* publish/mcp-servers/ai-ready-engine/schema/ && cp mcp-servers/ai-ready-engine/package.json publish/mcp-servers/ai-ready-engine/ && cp README.md README.en.md QUICKSTART.md QUICKSTART.en.md LICENSE version.json CHANGELOG.md publish/ && cp -r examples/* publish/examples/ && cp .market-assets/*.png publish/.market-assets/ 2>/dev/null; node test/publish-verify.js && echo '✅ Publish directory ready: publish/'",
+     "prepare-market": "npm run build:publish && echo '📦 Market package ready at publish/. To create a git-safe market repo: cp -r publish/* /path/to/market-repo/'"
+  },
+  "author": "想象一片森林",
+  "license": "Proprietary",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  },
+  "dependencies": {
+    "playwright": "^1.61.1"
+  }
+}

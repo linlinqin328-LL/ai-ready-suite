@@ -1,0 +1,278 @@
+{
+  "name": "Example Design System",
+  "version": "2.0.0",
+  "description": "Comprehensive sample design system with 18 components including icons, templates, variants, and full metadata for AI Ready evaluation.",
+  "createdAt": "2026-07-21",
+  "components": [
+    {
+      "name": "Button/Primary",
+      "description": "主要操作按钮，用于页面核心 CTA",
+      "props": {
+        "type": { "type": "string", "enum": ["primary", "secondary", "text"], "default": "primary" },
+        "size": { "type": "string", "enum": ["sm", "md", "lg"], "default": "md" },
+        "disabled": { "type": "boolean", "default": false },
+        "loading": { "type": "boolean", "default": false },
+        "icon": { "type": "string", "description": "前置图标名称" }
+      },
+      "children": [],
+      "variants": ["Primary", "Secondary", "Text"],
+      "usesTokens": true
+    },
+    {
+      "name": "Button/Icon",
+      "description": "图标按钮，仅展示图标无文案，用于工具栏紧凑场景",
+      "props": {
+        "icon": { "type": "string", "required": true },
+        "size": { "type": "string", "enum": ["sm", "md", "lg"], "default": "md" },
+        "disabled": { "type": "boolean", "default": false }
+      },
+      "children": [],
+      "variants": ["Default", "Circle"],
+      "usesTokens": true
+    },
+    {
+      "name": "Card",
+      "description": "内容卡片容器，用于承载一组相关信息，支持头部/内容/底部三区域",
+      "props": {
+        "title": { "type": "string", "description": "卡片标题" },
+        "bordered": { "type": "boolean", "default": true },
+        "shadow": { "type": "string", "enum": ["none", "sm", "md", "lg"], "default": "sm" },
+        "padding": { "type": "string", "enum": ["compact", "default", "loose"], "default": "default" }
+      },
+      "children": ["Button", "Tag", "Avatar", "Input", "Select"],
+      "variants": ["Default", "Bordered", "Shadowless"],
+      "usesTokens": true
+    },
+    {
+      "name": "Input",
+      "description": "文本输入框，用于表单数据录入，支持多种状态",
+      "props": {
+        "placeholder": { "type": "string" },
+        "size": { "type": "string", "enum": ["sm", "md", "lg"], "default": "md" },
+        "disabled": { "type": "boolean", "default": false },
+        "clearable": { "type": "boolean", "default": false },
+        "prefixIcon": { "type": "string", "description": "前置图标名称" },
+        "suffixIcon": { "type": "string", "description": "后置图标名称" }
+      },
+      "children": [],
+      "variants": ["Default", "Error", "Success", "Disabled"],
+      "usesTokens": true
+    },
+    {
+      "name": "Select",
+      "description": "下拉选择器，用于从一组选项中选择，支持单选和多选",
+      "props": {
+        "placeholder": { "type": "string" },
+        "multiple": { "type": "boolean", "default": false },
+        "disabled": { "type": "boolean", "default": false },
+        "size": { "type": "string", "enum": ["sm", "md", "lg"], "default": "md" },
+        "clearable": { "type": "boolean", "default": true }
+      },
+      "children": [],
+      "variants": ["Default", "Multiple", "Disabled"],
+      "usesTokens": false
+    },
+    {
+      "name": "Tag/Default",
+      "description": "标签，用于标记和分类，支持多种颜色和可关闭",
+      "props": {
+        "color": { "type": "string", "enum": ["default", "blue", "green", "orange", "red", "purple"], "default": "default" },
+        "closable": { "type": "boolean", "default": false },
+        "size": { "type": "string", "enum": ["sm", "md"], "default": "md" }
+      },
+      "children": [],
+      "variants": ["Default", "Blue", "Green", "Orange", "Red", "Purple"],
+      "usesTokens": true
+    },
+    {
+      "name": "Tag/Success",
+      "description": "成功状态标签，用于表示操作成功或完成状态",
+      "props": {
+        "closable": { "type": "boolean", "default": false },
+        "size": { "type": "string", "enum": ["sm", "md"], "default": "md" }
+      },
+      "children": [],
+      "variants": ["Solid", "Light"],
+      "usesTokens": true
+    },
+    {
+      "name": "Tag/Warning",
+      "description": "警告状态标签，用于表示需要注意或警告状态",
+      "props": {
+        "closable": { "type": "boolean", "default": false },
+        "size": { "type": "string", "enum": ["sm", "md"], "default": "md" }
+      },
+      "children": [],
+      "variants": ["Solid", "Light"],
+      "usesTokens": true
+    },
+    {
+      "name": "Tag/Danger",
+      "description": "危险/错误状态标签，用于表示错误或危险操作状态",
+      "props": {
+        "closable": { "type": "boolean", "default": false },
+        "size": { "type": "string", "enum": ["sm", "md"], "default": "md" }
+      },
+      "children": [],
+      "variants": ["Solid", "Light"],
+      "usesTokens": true
+    },
+    {
+      "name": "Icon/ArrowRight",
+      "description": "右箭头图标，用于导航、列表跳转等场景",
+      "props": {
+        "size": { "type": "string", "enum": ["xs", "sm", "md", "lg"], "default": "md" },
+        "color": { "type": "string" }
+      },
+      "children": [],
+      "variants": ["Default", "Bold"],
+      "usesTokens": true,
+      "isIcon": true
+    },
+    {
+      "name": "Icon/Check",
+      "description": "勾选图标，用于确认、成功、选中状态",
+      "props": {
+        "size": { "type": "string", "enum": ["xs", "sm", "md", "lg"], "default": "md" },
+        "color": { "type": "string" }
+      },
+      "children": [],
+      "variants": ["Default", "Circle", "Bold"],
+      "usesTokens": true,
+      "isIcon": true
+    },
+    {
+      "name": "Icon/Close",
+      "description": "关闭图标，用于关闭弹窗、标签、通知等",
+      "props": {
+        "size": { "type": "string", "enum": ["xs", "sm", "md", "lg"], "default": "md" },
+        "color": { "type": "string" }
+      },
+      "children": [],
+      "variants": ["Default", "Circle", "Bold"],
+      "usesTokens": true,
+      "isIcon": true
+    },
+    {
+      "name": "Icon/Search",
+      "description": "搜索图标，用于搜索框、搜索按钮",
+      "props": {
+        "size": { "type": "string", "enum": ["xs", "sm", "md", "lg"], "default": "md" },
+        "color": { "type": "string" }
+      },
+      "children": [],
+      "variants": ["Default", "Bold"],
+      "usesTokens": true,
+      "isIcon": true
+    },
+    {
+      "name": "Icon/Setting",
+      "description": "设置图标，用于系统设置、偏好配置入口",
+      "props": {
+        "size": { "type": "string", "enum": ["xs", "sm", "md", "lg"], "default": "md" },
+        "color": { "type": "string" }
+      },
+      "children": [],
+      "variants": ["Default", "Bold"],
+      "usesTokens": true,
+      "isIcon": true
+    },
+    {
+      "name": "Dialog",
+      "description": "对话框，用于模态确认、信息展示，支持标题/内容/底部三区域",
+      "props": {
+        "title": { "type": "string", "description": "对话框标题" },
+        "width": { "type": "string", "enum": ["sm", "md", "lg", "full"], "default": "md" },
+        "closable": { "type": "boolean", "default": true },
+        "maskClosable": { "type": "boolean", "default": true },
+        "footerAlign": { "type": "string", "enum": ["left", "center", "right"], "default": "right" }
+      },
+      "children": ["Button", "Input", "Select", "Tag"],
+      "variants": ["Default", "Large", "Fullscreen"],
+      "usesTokens": true
+    },
+    {
+      "name": "Form",
+      "description": "表单容器，管理表单状态、校验和提交",
+      "props": {
+        "layout": { "type": "string", "enum": ["horizontal", "vertical", "inline"], "default": "horizontal" },
+        "labelWidth": { "type": "string", "default": "120px" },
+        "size": { "type": "string", "enum": ["sm", "md", "lg"], "default": "md" },
+        "requiredMark": { "type": "boolean", "default": true }
+      },
+      "children": ["Input", "Select", "Button"],
+      "variants": ["Horizontal", "Vertical", "Inline"],
+      "usesTokens": true
+    },
+    {
+      "name": "Table",
+      "description": "表格，用于展示结构化数据，支持排序、筛选、分页",
+      "props": {
+        "columns": { "type": "array", "description": "列定义数组" },
+        "dataSource": { "type": "array", "description": "数据源" },
+        "bordered": { "type": "boolean", "default": false },
+        "striped": { "type": "boolean", "default": false },
+        "pageSize": { "type": "number", "default": 20 },
+        "rowSelection": { "type": "string", "enum": ["none", "single", "multiple"], "default": "none" }
+      },
+      "children": ["Button", "Tag", "Avatar"],
+      "variants": ["Default", "Bordered", "Striped", "Compact"],
+      "usesTokens": true
+    },
+    {
+      "name": "Toolbar",
+      "description": "工具栏容器，用于放置操作按钮、搜索、筛选等",
+      "props": {
+        "compact": { "type": "boolean", "default": false },
+        "align": { "type": "string", "enum": ["left", "center", "right", "space-between"], "default": "left" },
+        "divider": { "type": "boolean", "default": false }
+      },
+      "children": ["Button", "Input", "Select", "Icon"],
+      "variants": ["Default", "Compact", "WithDivider"],
+      "usesTokens": true
+    }
+  ],
+  "tokens": [
+    "--color-primary",
+    "--color-primary-hover",
+    "--color-primary-active",
+    "--color-secondary",
+    "--color-secondary-hover",
+    "--color-text",
+    "--color-text-secondary",
+    "--color-text-disabled",
+    "--color-border",
+    "--color-border-hover",
+    "--color-background",
+    "--color-background-secondary",
+    "--color-success",
+    "--color-warning",
+    "--color-danger",
+    "--spacing-xxs",
+    "--spacing-xs",
+    "--spacing-sm",
+    "--spacing-md",
+    "--spacing-lg",
+    "--spacing-xl",
+    "--font-size-xs",
+    "--font-size-sm",
+    "--font-size-base",
+    "--font-size-lg",
+    "--font-size-xl",
+    "--border-radius-sm",
+    "--border-radius-md",
+    "--border-radius-lg",
+    "--shadow-sm",
+    "--shadow-md",
+    "--shadow-lg",
+    "--opacity-disabled"
+  ],
+  "metadata": {
+    "hasSemanticMetadata": true,
+    "totalComponents": 18,
+    "tokenBindingRate": 0.83,
+    "designTool": "MasterGo",
+    "framework": "React",
+    "componentSetCount": 14
+  }
+}

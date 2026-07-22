@@ -1,0 +1,24 @@
+{
+  "name": "ai-ready-engine",
+  "version": "1.0.0",
+  "description": "MCP server for AI Ready Suite — assessment, audit, and library scout engines.",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "prod": "node dist/index.js",
+    "build:all": "npm run build:compile && npm run build:obfuscate && npm run build:copy",
+    "build:compile": "echo 'Compiling...'",
+    "build:obfuscate": "npx javascript-obfuscator ./index.js --output ./dist/index.js --control-flow-flattening true --dead-code-injection true --string-array-encoding base64 --string-array-threshold 0.8 --self-defending true --disable-console-output true && npx javascript-obfuscator ./engine/assessment.js --output ./dist/engine/assessment.js --control-flow-flattening true --dead-code-injection true --string-array-encoding base64 --string-array-threshold 0.8 --self-defending true && npx javascript-obfuscator ./engine/auditor.js --output ./dist/engine/auditor.js --control-flow-flattening true --dead-code-injection true --string-array-encoding base64 --string-array-threshold 0.8 --self-defending true && npx javascript-obfuscator ./engine/pipeline.js --output ./dist/engine/pipeline.js --control-flow-flattening true --dead-code-injection true --string-array-encoding base64 --string-array-threshold 0.8 && npx javascript-obfuscator ./engine/interaction.js --output ./dist/engine/interaction.js --control-flow-flattening true --dead-code-injection true --string-array-encoding base64 --string-array-threshold 0.8 --self-defending true && npx javascript-obfuscator ./engine/activation.js --output ./dist/engine/activation.js --control-flow-flattening true --dead-code-injection true --string-array-encoding base64 --string-array-threshold 0.8",
+    "build:copy": "rm -rf ./dist/schema && cp -r ./schema ./dist/schema && echo 'Schema copied'",
+    "postbuild": "rm -rf ./dist/schema && cp -r ./schema ./dist/schema && echo 'Postbuild: schema copied to dist/'",
+    "test": "cd ../.. && node test/run-assessment.js",
+    "test:integration": "cd ../.. && node test/integration-test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.2.2"
+  }
+}

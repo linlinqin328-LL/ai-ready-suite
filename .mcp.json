@@ -1,0 +1,13 @@
+{
+   "mcpServers": {
+    "ai-ready-engine": {
+      "command": "node",
+      "args": ["mcp-servers/ai-ready-engine/dist/index.js"],
+      "env": {
+        "# 设置 Pro 激活码后解锁全部功能": "",
+        "# 获取方式: 发送邮件至 3539739951@qq.com": "",
+        "AI_READY_KEY": ""
+      }
+    }
+  }
+}

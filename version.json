@@ -1,0 +1,18 @@
+{
+  "plugin": "ai-ready-suite",
+  "name": "AI Ready Suite",
+  "nameZh": "AI 就绪工具套件",
+  "version": "1.0.1",
+  "buildDate": "2026-07-21",
+  "status": "released",
+  "released": "2026-07-21",
+  "previousVersion": "1.0.0",
+  "description": "Combined assessment, audit, and library scout skills with MCP-powered scoring engine.",
+  "descriptionZh": "整合评估、审计、库侦察三大能力，MCP 引擎提供评分计算，Skill 层负责交互编排与报告输出。",
+  "components": {
+    "aiReadyEngine": "1.0.1",
+    "assessmentSkill": "2.1",
+    "auditorSkill": "0.3",
+    "scoutSkill": "2.0"
+  }
+}

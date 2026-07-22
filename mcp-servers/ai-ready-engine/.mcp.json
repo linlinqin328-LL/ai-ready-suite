@@ -1,0 +1,9 @@
+{
+  "mcp_servers": {
+    "ai-ready-engine": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "env": {}
+    }
+  }
+}
