@@ -1,44 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "AI Ready Assessment Report",
+  "title": "AI Ready Assessment Report Schema",
+  "description": "Public schema summary. Full dimension definitions, scoring methodology, and weight systems are proprietary assets and not disclosed in this repository.",
   "type": "object",
-  "required": ["reportType", "skillVersion", "assessmentDate", "dataQuality", "scored"],
+  "required": ["reportType", "version", "assessmentDate"],
   "properties": {
-    "reportType": { "type": "string", "enum": ["ai-ready-assessment"] },
-    "skillVersion": { "type": "string" },
-    "assessmentDate": { "type": "string", "format": "date" },
-    "dataQuality": { "type": "string", "enum": ["full", "partial", "minimal"] },
-    "scored": {
-      "type": "object",
-      "properties": {
-        "overall": { "type": "number", "minimum": 0, "maximum": 5 },
-        "dimensions": {
-          "type": "object",
-          "patternProperties": { "^D[1-9]$|^D10$": { "type": "number", "minimum": 0, "maximum": 5 } }
-        },
-        "dimensionWeights": { "type": "object" },
-        "levels": {
-          "type": "object",
-          "properties": {
-            "L1_component_standardization": { "type": "object", "properties": { "score": { "type": "number" }, "weight": { "type": "number" } } },
-            "L2_token_engineering": { "type": "object", "properties": { "score": { "type": "number" }, "weight": { "type": "number" } } },
-            "L3_semantic_intelligence": { "type": "object", "properties": { "score": { "type": "number" }, "weight": { "type": "number" } } },
-            "L4_ai_connectivity": { "type": "object", "properties": { "score": { "type": "number" }, "weight": { "type": "number" } } },
-            "L5_agent_collaboration": { "type": "object", "properties": { "score": { "type": "number" }, "weight": { "type": "number" } } }
-          }
-        },
-        "aiReadyLevel": { "type": "string" },
-        "aiReadyLevelLabel": { "type": "string" },
-        "aiReadyLevelEmoji": { "type": "string" },
-        "confidence": {
-          "type": "object",
-          "properties": {
-            "level": { "type": "string", "enum": ["high", "medium", "low"] },
-            "percentage": { "type": "number" },
-            "range": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
-          }
-        }
-      }
-    }
+    "reportType": { "type": "string", "description": "Type of assessment report" },
+    "version": { "type": "string", "description": "Schema version" },
+    "assessmentDate": { "type": "string", "description": "Date of assessment" },
+    "summary": { "type": "object", "description": "Qualitative assessment summary only — full dimension scores are internal" }
   }
 }
