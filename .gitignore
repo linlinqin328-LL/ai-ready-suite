@@ -46,3 +46,12 @@ publish/
 
 # Engine source (proprietary, not published)
 mcp-servers/ai-ready-engine/engine/
+
+# === 报告输出转译保护 ===
+# L0 原始数据 — 仅你自己可见，不入仓库
+_internal/
+# 按层级管理的转译输出目录（产研/客户版不入 GitHub 仓库）
+reports/rnd/
+reports/customer/
+# 公开版允许入仓库
+!reports/public/
