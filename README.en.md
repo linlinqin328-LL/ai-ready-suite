@@ -243,3 +243,7 @@ Proprietary — See [LICENSE](LICENSE). Unauthorized copying, redistribution, or
  | Trae | ✅ | Available (adapting) | ✅ Direct | Manual MCP config |
  | Cursor | ✅ | VS Code marketplace | ✅ Direct | `.cursor/mcp.json` |
  
+
+---
+
+© 2026 想象一片森林
