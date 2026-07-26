@@ -47,6 +47,9 @@ publish/
 # Engine source (proprietary, not published)
 mcp-servers/ai-ready-engine/engine/
 
+# Test files exposing activation algorithm
+test/activation-key.test.js
+
 # === 报告输出转译保护 ===
 # L0 原始数据 — 仅你自己可见，不入仓库
 _internal/
