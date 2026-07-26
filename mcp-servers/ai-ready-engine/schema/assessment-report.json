@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI Ready Assessment Report Schema",
+  "description": "Public schema summary. Full dimension definitions, scoring methodology, and weight systems are proprietary assets and not disclosed in this repository.",
+  "type": "object",
+  "required": ["reportType", "version", "assessmentDate"],
+  "properties": {
+    "reportType": { "type": "string", "description": "Type of assessment report" },
+    "version": { "type": "string", "description": "Schema version" },
+    "assessmentDate": { "type": "string", "description": "Date of assessment" },
+    "summary": { "type": "object", "description": "Qualitative assessment summary only — full dimension scores are internal" }
+  }
+}

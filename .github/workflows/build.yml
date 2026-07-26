@@ -1,0 +1,28 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            mcp-servers/ai-ready-engine/package-lock.json
+      - run: npm install
+      - run: npm run build
+      - run: npm run test:ci
+      - run: npm run test:integration
+      - run: node test/run-dist.js

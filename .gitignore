@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+.yarn-integrity
+.yarn/
+.pnp.*
+
+# Build output (obfuscated)
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Codex plugin config & orchestration
+.codex-plugin/
+skills/
+
+# Marketplace assets
+.market-assets/
+
+# Codex internal
+.agents/
+
+# Publish output
+publish/
+
+# Binary artifacts
+*.zip
+*.tar.gz
+
+# Engine source (proprietary, not published)
+mcp-servers/ai-ready-engine/engine/
+
+# Test files exposing activation algorithm
+test/activation-key.test.js
+
+# === 报告输出转译保护 ===
+# L0 原始数据 — 仅你自己可见，不入仓库
+_internal/
+# 按层级管理的转译输出目录（产研/客户版不入 GitHub 仓库）
+reports/rnd/
+reports/customer/
+# 公开版允许入仓库
+!reports/public/
+ 
+# === 知识产权保护：引擎构建产物不入仓库 ===
+mcp-servers/ai-ready-engine/dist/
+# === 激活码工具链保护 ===
+tools/gen-key.sh
+tools/generate-key.js
+tools/ACTIVATION-GUIDE.md

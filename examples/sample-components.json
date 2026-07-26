@@ -1,0 +1,10 @@
+{
+  "name": "Sample Design System",
+  "version": "0.0.1",
+  "description": "Minimal example — real assessment inputs use a different schema.",
+  "components": [
+    { "name": "Component A", "type": "action" },
+    { "name": "Component B", "type": "display" },
+    { "name": "Component C", "type": "input" }
+  ]
+}
