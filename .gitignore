@@ -55,3 +55,10 @@ reports/rnd/
 reports/customer/
 # 公开版允许入仓库
 !reports/public/
+ 
+# === 知识产权保护：引擎构建产物不入仓库 ===
+mcp-servers/ai-ready-engine/dist/
+# === 激活码工具链保护 ===
+tools/gen-key.sh
+tools/generate-key.js
+tools/ACTIVATION-GUIDE.md
